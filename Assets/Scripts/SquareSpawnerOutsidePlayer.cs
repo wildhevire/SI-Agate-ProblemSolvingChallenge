@@ -6,12 +6,13 @@ public class SquareSpawnerOutsidePlayer : MonoBehaviour
 {
     public GameObject squarePrefab;
     public Transform player;
+    public int minSquareCount = 0;
     public int maxSquareCount;
     public float maxX;
     public float maxY;
     public float offset;
 
-     void OnEnable()
+    void OnEnable()
     {
         ScoreManager.OnHitSquare += SpawnNewSquare;
     }   
@@ -23,7 +24,7 @@ public class SquareSpawnerOutsidePlayer : MonoBehaviour
 
     void Start()
     {
-        var totalSquare = Random.Range(0,maxSquareCount);
+        var totalSquare = Random.Range(minSquareCount,maxSquareCount);
         for (int i = 0; i < totalSquare; i++)
         {
             SpawnNewSquare();

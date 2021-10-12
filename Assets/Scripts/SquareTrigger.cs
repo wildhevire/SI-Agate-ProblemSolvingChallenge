@@ -11,5 +11,11 @@ public class SquareTrigger : MonoBehaviour
             ScoreManager.OnHitSquare.Invoke();
             Destroy(gameObject);
         }
+        
+        if(collision.CompareTag("Enemy"))
+        {
+            ScoreManager.OnEnemyScore.Invoke();
+            Destroy(gameObject);
+        }
     }
 }
