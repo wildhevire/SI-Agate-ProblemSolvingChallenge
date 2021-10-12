@@ -15,11 +15,13 @@ public class SquareSpawnerOutsidePlayer : MonoBehaviour
     void OnEnable()
     {
         ScoreManager.OnHitSquare += SpawnNewSquare;
+        ScoreManager.OnEnemyScore += SpawnNewSquare;
     }   
 
     void OnDisable()
     {
         ScoreManager.OnHitSquare -= SpawnNewSquare;
+        ScoreManager.OnEnemyScore -= SpawnNewSquare;
     }
 
     void Start()
