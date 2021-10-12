@@ -39,6 +39,7 @@ public class ScoreManager : MonoBehaviour
 
     void SetEnemyScore(int score)
     {
+        if (enemyText == null) return;
         enemyText.text = "<color=red>Enemy</color> Score : " + score;
     }
     
